@@ -1,8 +1,8 @@
 # draw.io automated AWS icon title insertion
 
-I use draw.io a lot, and I discovered that it is convenient to have the many AWS icons not only visible by their logos, but also having the titles visible.
+I use draw.io a lot, and I discovered that it is convenient to have the many AWS icons not only visible by their logos, but also having the titles, service names like "DynamoDB" visible underneath the icon.
 
-To avoid the manual insertion of all AWS icons, I have created a Python script that finds all AWS icons in a draw.io file which do not yet have a title, and it will insert the official title like e.g. "CloudFormation".
+To avoid the manual title insertion of all AWS icons, I have created a Python script that finds all AWS icons in a draw.io file which do not yet have a title, and it will insert the official title like e.g. "CloudFormation".
 
 Prerequisite: 
 
@@ -16,13 +16,13 @@ Prerequisite:
 }
 ```
 
-Whenever the script detects a missing AWS icon, it will insert the missing default title. In that moment, draw.io will detect that its XML file was changed externally, and you will see a red box in the menu list saying "The file has been modified. Click here to synchronize". If you do that, the inserted icon title will show up!
+Whenever the script detects a missing AWS icon, it will insert the missing default title in the draw.io XML file. In that moment, draw.io will detect that its XML file was changed externally, and you will see a red box in the top menu list saying "The file has been modified. Click here to synchronize". If you do that, the inserted icon title will show up!
 
 Please be aware that the script runs like a permanent observer, i.e. it performs an infinite loop and checks the draw.io file each 2 seconds (adjustable with variable "sleepTime").
 
 One convenient way to invoke the script on MacOS would be to send it to the background plus send all output to /dev/null to get rid of any repetitive terminal messages:
 
-drawio-updater2 <draw.io-filename> > /dev/null 2>&1 &
+python drawio-updater.py <draw.io-filename> > /dev/null 2>&1 &
 
 You can pull it to the foreground again by typing "fg". Then stop it by pressing CTRL+c.
 
