@@ -18,7 +18,9 @@ Prerequisite:
 }
 ```
 
-Whenever the script detects a missing AWS icon, it will insert the missing default title in the draw.io XML file. In that moment, draw.io will detect that its XML file was changed externally, and you will see a red box in the top menu list saying "The file has been modified. Click here to synchronize". If you do that, the inserted icon title will show up!
+Whenever the script detects a missing AWS icon, it will insert the missing default title in the draw.io XML file. In that moment, draw.io will detect that its XML file was changed externally, and you will see a red box in the top menu list saying "The file has been modified. Click here to synchronize". If you confirm that, the inserted icon title will show up!
+
+![file modified image](./img/file_modified.png)
 
 Please be aware that the script runs like a permanent observer, i.e. it performs an infinite loop and checks the draw.io file each 2 seconds (adjustable with variable "sleepTime").
 
