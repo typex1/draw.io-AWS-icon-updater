@@ -2,7 +2,7 @@
 
 I use draw.io a lot, and I discovered that it is convenient to have the many AWS icons not only visible by their logos, but also having the titles, service names like "DynamoDB" visible underneath the icon.
 
-![DynamoDB title insertion image](./img/dynamodb-title.png)
+![DynamoDB title insertion image](./img/dynamodb_title.png)
 
 To avoid the manual title insertion of all AWS icons, I have created a Python script that finds all AWS icons in a draw.io file which do not yet have a title, and it will insert the official title like e.g. "CloudFormation".
 
