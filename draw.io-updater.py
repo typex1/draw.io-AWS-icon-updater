@@ -8,13 +8,11 @@ import string
 # alias to be created e.g. for bash:
 # drawio-updater='python3 ~/git/CodeCommit/AWS-Services/Python/PythonXML/1-drawio-Updater_v2.py' 
 # usage example to run in the background:
-# drawio-updater ${PWD}/ExamReadiness_Dev_20230324_session.drawio > /dev/null 2>&1 &
+# drawio-updater ${PWD}/my-presentation.drawio > /dev/null 2>&1 &
 
 changed=False
-debug=True
+debug=False
 sleepTime=2
-#x = datetime.datetime.now()
-#print("date: "+str(x))
 
 if len(sys.argv) == 2:
         inputFile = sys.argv[1]
@@ -37,6 +35,7 @@ def replaceWords(s):
     if s == "Rule 3": s= "Rule"
     if s == "Auto Scaling2": s= "Auto Scaling"
     if s == "Ecr": s= "ECR"
+    if s == "Permissions": s= "Policy"
     # Rds - RDS
     # Sqs - SQS
     # Bucket With Objects - S3 Bucket
