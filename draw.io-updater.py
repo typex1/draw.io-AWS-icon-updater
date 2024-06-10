@@ -36,9 +36,8 @@ def replaceWords(s):
     if s == "Auto Scaling2": s= "Auto Scaling"
     if s == "Ecr": s= "ECR"
     if s == "Permissions": s= "Policy"
-    # Rds - RDS
-    # Sqs - SQS
-    # Bucket With Objects - S3 Bucket
+    if s == "Table": s="DynamoDB Table"
+    if s == "Api Gateway": s="API Gateway"
     return s
 
 document = etree.parse(inputFile)
